@@ -1,0 +1,29 @@
+{
+  "name": "node-jp",
+  "version": "1.0.0",
+  "description": "Learning Node.jp and other tools like npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiotaku/node-jp.git"
+  },
+  "keywords": [
+    "Node.js",
+    "NPM",
+    "express",
+    ".env",
+    "body-parser"
+  ],
+  "author": "Kioka Takumi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kiotaku/node-jp/issues"
+  },
+  "homepage": "https://github.com/kiotaku/node-jp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
