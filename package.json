@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/kiotaku/node-jp#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1"
   }
 }
