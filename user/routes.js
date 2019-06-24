@@ -19,10 +19,17 @@ router.route('/')
     })
   })
 
-  router.route('/:id')
-    .get((req, res) => {
-      user.findById(req.params.id).then(user => {
-        res.send(user)
-      })
+router.route('/:id')
+  .get((req, res) => {
+    user.findById(req.params.id).then(user => {
+      res.send(user)
     })
+  })
+  .patch((req, res) => {
+    //normally here update existing user.......
+    res.ok().send('user updated sucessfully.')
+  })
+  .delete((req, res) => {
+    user.findByIdAndDelete(req.params.id).then(() => res.ok())
+  })
 module.exports = router
