@@ -4,23 +4,13 @@ require('dotenv').config()
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const db = require('./db')
 
-const { Schema } = mongoose
-
-mongoose.Promise = Promise
 const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const userSchema = new Schema({
-  firstname: String,
-  lastname: String,
-  dateOfBirth: Date
-})
-
-const user = mongoose.model('User', userSchema)
+const user = require('./user/model')
 
 db.on('connected', () => app.listen(process.env.PORT))
 
