@@ -5,6 +5,8 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const db = require('./db')
+
 const { Schema } = mongoose
 
 mongoose.Promise = Promise
@@ -20,12 +22,7 @@ const userSchema = new Schema({
 
 const user = mongoose.model('User', userSchema)
 
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true }).then(() => {
-  console.log('Connected successfully.')
-  app.listen(process.env.PORT)
-}).catch(err => {
-  console.log('Connection to db failed: ' + err)
-})
+db.on('connected', () => app.listen(process.env.PORT))
 
 app.get('/user', (req, res) => {
   user.find().then(users => {
