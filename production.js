@@ -1,6 +1,6 @@
 module.exports = (app, port) => {
   app.enable('trust proxy')
-  app.use ((req, res, next) => {
+  app.use((req, res, next) => {
     if (req.secure) {
       next();
     } else {
